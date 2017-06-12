@@ -13,7 +13,8 @@ suppressPackageStartupMessages(c(
   library(e1071)))
 
 source("predict.R")
-load("tri_naiveBayes.RData")
+#load("tri_naiveBayes.RData")
+load("df_trigram.RData")
 
 
 shinyServer(function(input, output) {
