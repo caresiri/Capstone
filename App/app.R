@@ -13,7 +13,7 @@ suppressPackageStartupMessages(c(
 
 # User Interface
 ui <- fluidPage(
-  textInput("rawtext", "RawText", "Data Summary"),
+  textInput("rawtext", "NextWordPredictor", "type sentence here"),
   verbatimTextOutput("value"))
 
 
