@@ -20,8 +20,8 @@ ui <- fluidPage(
 # Server
 
 source("predict.R")
-#load("tri_naiveBayes.RData")
-load("df_trigram.RData")
+load("tri_naiveBayes.RData")
+#load("df_trigram.RData")
 
 server <- function(input, output) {
 
