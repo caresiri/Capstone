@@ -3,12 +3,12 @@ library(tm)
 library(rdrop2)
 #setwd("/Users/carlossiri/Documents/Coursera/Capstone")
 
-load("df_trigram.RData")
+#load("df_trigram.RData")
 
-tri_naiveBayes <- naiveBayes(Y ~ X1 + X2 , df_trigram)
+#tri_naiveBayes <- naiveBayes(Y ~ X1 + X2 , df_trigram)
 
 
-#load("tri_naiveBayes.RData")
+load("tri_naiveBayes.RData")
 
 CleanText <- function(rawtext){
 CleanText <- tolower(rawtext)
