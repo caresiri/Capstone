@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 
+#setwd("/Users/carlossiri/Documents/Coursera/Capstone")
 suppressPackageStartupMessages(c(
   library(tm),
   library(shiny),
@@ -17,4 +18,3 @@ shinyUI(fluidPage(
   textInput("rawtext", "NextWord", "Type text here"),
   verbatimTextOutput("value"))
 )
-
