@@ -12,8 +12,8 @@ suppressPackageStartupMessages(c(
   library(shiny),
   library(e1071)))
 
-levels <- readRDS("unigram_levels.rds")
-model <- readRDS("tri_naiveBayes.rds")
+#unigram_levels <- readRDS("unigram_levels.rds")
+#model <- readRDS("tri_naiveBayes.rds")
 source("predict.R")
 #load("df_trigram.RData")
 
@@ -26,5 +26,5 @@ shinyServer(function(input, output) {
     wordPred <- WordPrediction(CleanText)})
   
   output$value <- renderPrint(wordPred())
-
+  
 })
