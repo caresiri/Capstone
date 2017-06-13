@@ -12,7 +12,7 @@ suppressPackageStartupMessages(c(
   library(shiny),
   library(e1071)))
 
-
+readRDS("unigram_levels.rds")
 readRDS("tri_naiveBayes.rds")
 source("predict.R")
 #load("df_trigram.RData")
