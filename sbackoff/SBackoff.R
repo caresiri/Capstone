@@ -1,7 +1,9 @@
-load('sbackoff.RData')
+#load('sbackoff.RData')
+data_unigram <- readRDS("df_unigram.rds")
+data_bigram <- readRDS("df_bigram.rds")
+data_trigram <- readRDS("df_trigram.rds")
 
-
-predict0 <-function(rawtext,df_unigram,df_bigram,df_trigram) {
+predict0 <-function(rawtext,data_unigram,data_bigram,data_trigram) {
   sw <- stopwords(kind = "en")
   rawtext <- removePunctuation(rawtext)
   rawtext <- removeNumbers(rawtext)
