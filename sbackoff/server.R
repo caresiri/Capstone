@@ -14,6 +14,9 @@ suppressPackageStartupMessages(c(
 
 #unigram_levels <- readRDS("unigram_levels.rds")
 #model <- readRDS("tri_naiveBayes.rds")
+data_unigram <- readRDS("df_unigram.rds")
+data_bigram <- readRDS("df_bigram.rds")
+data_trigram <- readRDS("df_trigram.rds")
 source("SBackoff.R")
 #load('SBackoff.RData')
 #load("df_trigram.RData")
