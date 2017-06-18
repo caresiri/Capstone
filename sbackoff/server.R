@@ -24,7 +24,7 @@ shinyServer(function(input, output) {
     rawtext <- { input$rawtext }
   #  CleanText <- CleanText(rawtext)
    # wordPred <- WordPrediction(CleanText)
-    wordPred <- predict0(rawtext, df_unigram = df_unigram, df_bigram = df_bigram, df_trigram = df_trigram)})
+    wordPred <- predict0(rawtext, data_unigram = data_unigram, data_bigram = data_bigram, data_trigram = data_trigram)})
   
   output$placeholder <- renderText({ input$txt })
   output$value1 <- renderPrint(wordPred()[1])
