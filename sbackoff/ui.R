@@ -7,7 +7,7 @@
 # 
 #    http://shiny.rstudio.com/
 #
-setwd("/Users/carlossiri/Documents/Coursera/Capstone")
+#setwd("/Users/carlossiri/Documents/Coursera/Capstone")
 suppressPackageStartupMessages(c(
   library(tm),
   library(dplyr),
