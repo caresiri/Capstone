@@ -3,7 +3,7 @@ data_unigram <- readRDS("df_unigram.rds")
 data_bigram <- readRDS("df_bigram.rds")
 data_trigram <- readRDS("df_trigram.rds")
 
-predict0 <-function(rawtext,data_unigram,data_bigram,data_trigram) {
+predict0 <-function(rawtext,df_unigram,df_bigram,df_trigram) {
   sw <- stopwords(kind = "en")
   rawtext <- removePunctuation(rawtext)
   rawtext <- removeNumbers(rawtext)
@@ -15,19 +15,19 @@ predict0 <-function(rawtext,data_unigram,data_bigram,data_trigram) {
   if(rawtext == ''|rawtext == "na na") return('Warning: Just input something')
   
   
-  seektri <- grepl(paste0("^",rawtext,"$"), data_trigram$bigram)
-  subtri<- data_trigram[seektri,]
+  seektri <- grepl(paste0("^",rawtext,"$"), df_trigram$bigram)
+  subtri<- df_trigram[seektri,]
   input2 <- unlist(strsplit(rawtext," "))[2]
-  seekbi <- grepl(paste0("^",input2,"$"),data_bigram$unigram)
-  subbi <- data_bigram[seekbi,]
-  df_unigram <- mutate(data_unigram, fracfreq = freq/nrow(data_unigram)*.16)
-  useuni <- data_unigram[order(data_unigram$fracfreq,decreasing = T),]
+  seekbi <- grepl(paste0("^",input2,"$"),df_bigram$unigram)
+  subbi <- df_bigram[seekbi,]
+  df_unigram <- mutate(df_unigram, fracfreq = freq/nrow(df_unigram)*.16)
+  useuni <- df_unigram[order(df_unigram$fracfreq,decreasing = T),]
   useunia <- useuni[1:3,]
   
   
   if (sum(seektri) == 0) {
     if(sum(seekbi)==0){
-      return(head(df_unigram[order(data_unigram$freq,decreasing = T),1],
+      return(head(df_unigram[order(df_unigram$freq,decreasing = T),1],
                   3))
     }
     subbi$s <- 0.4*subbi$freq/sum(seekbi)
